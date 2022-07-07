@@ -1,9 +1,13 @@
 package com.yibo.seata.apiservice;
 
+import com.yibo.seata.dto.TransferRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import java.math.BigDecimal;
 
 /**
  * @Author: huangyibo
@@ -15,6 +19,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public interface Bank2Client {
 
     //远程调用微服务
-    @GetMapping("/bank2/transfer/{amount}")
-    public String transfer(@PathVariable("amount")Long amount);
+    @PostMapping("/bank2/transfer")
+    String transfer(@RequestBody TransferRequest transferRequest);
 }

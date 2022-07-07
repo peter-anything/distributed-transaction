@@ -1,11 +1,9 @@
 package com.yibo.seata.controller;
 
-import com.yibo.seata.service.AccountInfoService;
+import com.yibo.seata.dto.TransferRequest;
+import com.yibo.seata.service.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @Author: huangyibo
@@ -18,12 +16,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Bank2Controller {
 
     @Autowired
-    private AccountInfoService accountInfoService;
+    private AccountService accountService;
 
     //张三转账
-    @GetMapping("/transfer/{amount}")
-    public String transfer(@PathVariable("amount") Long amount){
-        accountInfoService.updateAccountBalance("2",amount);
-        return "bank1"+amount;
+    @PostMapping("/transfer")
+    public String transfer(@RequestBody TransferRequest transferRequest){
+        accountService.increaseMoney(null, transferRequest);
+        return "success";
     }
 }

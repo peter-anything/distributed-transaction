@@ -35,6 +35,8 @@
                              type="XMLMAPPER"/>
 
         <!--为哪张表生成代码-->
-        <table tableName="account_info"></table>
+        <table tableName="t_account" domainObjectName="Account"/>
+        <table tableName="t_order" domainObjectName="Order"/>
+        <table tableName="t_storage" domainObjectName="Storage"/>
     </context>
 </generatorConfiguration>

@@ -9,8 +9,8 @@ import io.seata.rm.tcc.api.TwoPhaseBusinessAction;
 @LocalTCC
 public interface AccountService {
     @TwoPhaseBusinessAction(name="transferAction",commitMethod = "commit",rollbackMethod = "rollback")
-    boolean decreaseMoney(BusinessActionContext businessActionContext,
-                          @BusinessActionContextParameter(paramName = "transferRequest") TransferRequest transferRequest);
+    boolean increaseMoney(BusinessActionContext businessActionContext,
+                        @BusinessActionContextParameter(paramName = "transferRequest") TransferRequest transferRequest);
     boolean commit(BusinessActionContext businessActionContext);
     boolean rollback(BusinessActionContext businessActionContext);
 }
