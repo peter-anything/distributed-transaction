@@ -4,7 +4,7 @@ import com.yibo.seata.apiservice.Bank2Client;
 import com.yibo.seata.domain.entity.Account;
 import com.yibo.seata.dto.TransferRequest;
 import com.yibo.seata.mapper.AccountMapper;
-import com.yibo.seata.service.service.AccountService;
+import com.yibo.seata.service.AccountService;
 import io.seata.rm.tcc.api.BusinessActionContext;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

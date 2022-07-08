@@ -1,7 +1,7 @@
 package com.yibo.seata.controller;
 
 import com.yibo.seata.dto.TransferRequest;
-import com.yibo.seata.service.service.AccountService;
+import com.yibo.seata.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

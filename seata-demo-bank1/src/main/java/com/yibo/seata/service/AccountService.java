@@ -1,4 +1,4 @@
-package com.yibo.seata.service.service;
+package com.yibo.seata.service;
 
 import com.yibo.seata.dto.TransferRequest;
 import io.seata.rm.tcc.api.BusinessActionContext;

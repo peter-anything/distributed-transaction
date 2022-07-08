@@ -1,7 +1,7 @@
 package com.yibo.seata.controller;
 
 import com.yibo.seata.dto.TransferRequest;
-import com.yibo.seata.service.service.AccountService;
+import com.yibo.seata.service.AccountService;
 import io.seata.spring.annotation.GlobalTransactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,7 +19,7 @@ public class Bank1Controller {
     @Autowired
     private AccountService accountService;
 
-    @GlobalTransactional
+//    @GlobalTransactional
     @PostMapping("/transfer")
     public String transfer(@RequestBody TransferRequest transferRequest){
         accountService.decreaseMoney(null, transferRequest);
